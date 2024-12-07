@@ -1,0 +1,34 @@
+[versions]
+kotlin = "1.9.25"
+java = "21"
+ktlint = "12.1.2"
+spring-boot = "3.4.0"
+spring-dependency-management = "1.1.6"
+uuid-generator = "5.1.0"
+kotling-logging-jvm = "7.0.3"
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+kotlin-plugin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+kotlin-plugin-jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version.ref = "kotlin" }
+springboot = { id = "org.springframework.boot", version.ref = "spring-boot" }
+springboot-denpendency-management = { id = "io.spring.dependency-management", version.ref = "spring-dependency-management" }
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
+
+[libraries]
+springboot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
+springboot-web = { module = "org.springframework.boot:spring-boot-starter-web" }
+springboot-data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa" }
+springboot-validation = { module = "org.springframework.boot:spring-boot-starter-validation" }
+springboot-test = { module = "org.springframework.boot:spring-boot-starter-test" }
+springboot-redis = { module = "org.springframework.boot:spring-boot-starter-data-redis" }
+springboot-security = { module = "org.springframework.boot:spring-boot-starter-security" }
+springboot-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator" }
+springboot-thymeleaf = { module = "org.springframework.boot:spring-boot-starter-thymeleaf" }
+springboot-mail = { module = "org.springframework.boot:spring-boot-starter-mail" }
+springboot-devtools = { module = "org.springframework.boot:spring-boot-devtools" }
+sprometheus = { module = "io.micrometer:micrometer-registry-prometheus" }
+uuid-generator = { module = "com.fasterxml.uuid:java-uuid-generator", version.ref = "uuid-generator" }
+kotling-logging-jvm = { module = "io.github.oshai:kotlin-logging-jvm", version.ref = "kotling-logging-jvm" }
+mysql = { module = "com.mysql:mysql-connector-j" }
