@@ -54,15 +54,10 @@ subprojects {
 
 	tasks.withType<KotlinCompile> {
 		kotlinOptions {
-			jvmTarget =
-				rootProject.libs.versions.java
-					.get()
+			jvmTarget = rootProject.libs.versions.java.get()
 		}
 	}
 
 	java.toolchain.languageVersion =
-		JavaLanguageVersion.of(
-			rootProject.libs.versions.java
-				.get(),
-		)
+		JavaLanguageVersion.of(rootProject.libs.versions.java.get())
 }
