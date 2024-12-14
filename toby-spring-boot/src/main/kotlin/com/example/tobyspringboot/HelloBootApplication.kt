@@ -1,5 +1,6 @@
 package com.example.tobyspringboot
 
+import com.example.config.MySpringBootApplication
 import org.springframework.boot.runApplication
 
 @MySpringBootApplication
