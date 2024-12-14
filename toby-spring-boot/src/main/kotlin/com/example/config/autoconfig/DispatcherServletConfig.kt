@@ -1,10 +1,10 @@
 package com.example.config.autoconfig
 
+import com.example.config.MyAutoConfig
 import org.springframework.context.annotation.Bean
-import org.springframework.context.annotation.Configuration
 import org.springframework.web.servlet.DispatcherServlet
 
-@Configuration
+@MyAutoConfig
 class DispatcherServletConfig {
     @Bean
     fun dispatcherServlet(): DispatcherServlet {
