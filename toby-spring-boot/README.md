@@ -36,3 +36,9 @@ annotation class MySpringBootApplication
 - 만약 `@Bean` 메소드 직접 호출로 빈 의존 관계 주입을 하지 않는다면 굳이 복잡한 프록시 생성을 할 필요가 없습니다.
 - proxyBeanMethods는 스프링 5.2 버전부터 지원되기 시작했고 지금은 스프링과 스프링 부트에 상당히 많은 @Configuration 클래스 설정에 적용되고 있습니다.
 - 이를 @Bean 라이트 모드(lite mode)라고 부릅니다. 빈으 로 등록되는 단순 팩토리 메소드로 사용됩니다.
+
+## 08. 조건부 자동 구성
+
+`org.springframework.boot.autoconfigure.AutoConfiguration.imports`로 AutoConfigure 목록의 빈이 등록됩니다.
+
+

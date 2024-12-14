@@ -1,16 +1,16 @@
 package com.example.config.autoconfig
 
 import com.example.config.MyAutoConfig
-import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory
+import org.springframework.boot.web.embedded.jetty.JettyServletWebServerFactory
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory
 import org.springframework.context.annotation.Bean
 
 @MyAutoConfig
-class TomcatWebServerConfig {
+class JettyWebServerConfig {
 
-    @Bean("tomcatWebServerFactory")
+    @Bean("jettyWebServerFactory")
     fun servletWebServerFactory(): ServletWebServerFactory {
-        return TomcatServletWebServerFactory()
+        return JettyServletWebServerFactory()
     }
 
 }
