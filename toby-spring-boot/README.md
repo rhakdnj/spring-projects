@@ -41,4 +41,20 @@ annotation class MySpringBootApplication
 
 `org.springframework.boot.autoconfigure.AutoConfiguration.imports`로 AutoConfigure 목록의 빈이 등록됩니다.
 
+### @Conditional과 Condition
+
+```java
+@Target({ElementType.TYPE, ElementType.METHOD})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+public @interface Conditional {
+
+    Class<? extends Condition>[] value();
+
+}
+```
+
+해당 `Conditional` 애노테이션의 경우 `METHOD`와 `TYPE`에 붙을 수 있습니다.
+
+- `@Configuration`의 `Conditional = true`일 때만, `@Bean` 메소드 레벨에서 `Conditional` 비교를 합니다.
 
