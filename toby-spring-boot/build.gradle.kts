@@ -1,7 +1,7 @@
 dependencies {
     implementation(libs.springboot.web)
     testImplementation(libs.springboot.starter.test)
-    implementation("org.springframework.boot:spring-boot-starter-jetty")
+//    implementation("org.springframework.boot:spring-boot-starter-jetty")
 
     implementation("org.springframework:spring-jdbc")
     runtimeOnly("com.h2database:h2")
