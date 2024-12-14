@@ -27,7 +27,6 @@ annotation class MySpringBootApplication
 `imports` 파일에 있는 클래스들은 `MyAutoConfig` 애노테이션을 부여하지 않았다고 해서 로딩이 안되는 것은 아닙니다.
 다만 해당 `MyAutoConfig` 애노테이션을 붙이는 것이 관례입니다.
 
-
 `proxyBeanMethods=false`
 
 - CGLib를 이용해서 프록시 클래스를 확장을 해서 `@Bean`이 붙은 메소드의 동작 방식을 변경합니다.
@@ -44,12 +43,13 @@ annotation class MySpringBootApplication
 ### @Conditional과 Condition
 
 ```java
+
 @Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface Conditional {
 
-    Class<? extends Condition>[] value();
+  Class<? extends Condition>[] value();
 
 }
 ```
@@ -58,3 +58,7 @@ public @interface Conditional {
 
 - `@Configuration`의 `Conditional = true`일 때만, `@Bean` 메소드 레벨에서 `Conditional` 비교를 합니다.
 
+### 자동 구성 정보 대체하기
+
+`ImportSelector` 중 `DeferredImportSelector`를 구현해야 하는 이유는 유저 구성 정보가 다 로딩이 되고 나서 자동 구성 정보를
+그 다음에 하나씩 하나씩 적용이 되도록 만들기 위함입니다.
