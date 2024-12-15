@@ -62,3 +62,8 @@ public @interface Conditional {
 
 `ImportSelector` 중 `DeferredImportSelector`를 구현해야 하는 이유는 유저 구성 정보가 다 로딩이 되고 나서 자동 구성 정보를
 그 다음에 하나씩 하나씩 적용이 되도록 만들기 위함입니다.
+
+### 스프링 부트의 @Conditional
+
+`@ConditionalOnClass` 주로 `@Configuration` 클래스 레벨에서 사용하지만 `@Bean` 메소드에도 적용 가능하다.
+단, 클래스 레벨의 검증 없이 @Bean 메소드에만 적용하면 풀필요하게 @Configuration 클래스가 빈으로 등록되기 때문에, 클래스 레벨 사용을 우선해야 한다.
