@@ -3,3 +3,7 @@ spring.application.name: toby-spring-boot
 logging:
   pattern:
     console: "%clr(${LOG_LEVEL_PATTERN:%5p}) %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
+
+server:
+  servlet:
+    context-path: /api

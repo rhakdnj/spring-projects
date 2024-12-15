@@ -67,3 +67,19 @@ public @interface Conditional {
 
 `@ConditionalOnClass` 주로 `@Configuration` 클래스 레벨에서 사용하지만 `@Bean` 메소드에도 적용 가능하다.
 단, 클래스 레벨의 검증 없이 @Bean 메소드에만 적용하면 풀필요하게 @Configuration 클래스가 빈으로 등록되기 때문에, 클래스 레벨 사용을 우선해야 한다.
+
+## 09. 외부 설정을 이용한 자동 구성
+
+### 자동 구성에 Environment 프로퍼티 적용
+
+```kotlin
+@Bean
+fun applicationRunner(env: Environment): ApplicationRunner {
+    return ApplicationRunner {
+        val name = env.getProperty("my.name")
+        println("my.name: $name")
+    }
+}
+```
+
+![img.png](image/img.png)
