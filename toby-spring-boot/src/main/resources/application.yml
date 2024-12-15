@@ -7,3 +7,9 @@ logging:
 my-server:
   context-path: /api
   port: 9090
+
+data-source:
+  driverClassName: org.h2.Driver
+  url: "jdbc:h2:mem:"
+  username: sa
+  password: ''

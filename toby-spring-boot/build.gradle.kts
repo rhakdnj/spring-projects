@@ -3,8 +3,8 @@ dependencies {
     testImplementation(libs.springboot.test)
 //    implementation("org.springframework.boot:spring-boot-starter-jetty")
 
-    implementation("org.springframework:spring-jdbc")
-    runtimeOnly("com.h2database:h2")
+    implementation(libs.springboot.jdbc)
+    runtimeOnly(libs.h2)
     implementation("com.zaxxer:HikariCP:6.2.1")
 
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
