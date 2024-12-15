@@ -75,11 +75,23 @@ public @interface Conditional {
 ```kotlin
 @Bean
 fun applicationRunner(env: Environment): ApplicationRunner {
-    return ApplicationRunner {
-        val name = env.getProperty("my.name")
-        println("my.name: $name")
-    }
+  return ApplicationRunner {
+    val name = env.getProperty("my.name")
+    println("my.name: $name")
+  }
 }
 ```
 
 ![img.png](image/img.png)
+
+### @Value와 PropertySourcesPlaceHolderConfigurer
+
+```kotlin
+@Value("\${server.servlet.context-path}")
+lateinit var contextPath: String
+```
+
+Value 애노테이션에 붙은 치환자를 교체해주는 것은 스프링 컨테이너의 기본 동작 방식이 아닙니다.
+스프링 컨테이너를 확장해서 치환자가 붙은 필드나 여러가지 구성 정보를 프로퍼티로 교체해주는
+그런 후처리 작업을 하는 어떤 기능을 스프링 컨테이너에 추가 해줘야 합니다.
+
