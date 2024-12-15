@@ -5,14 +5,19 @@ import com.example.config.EnableMyConfigurationProperties
 import com.example.config.MyAutoConfiguration
 import com.zaxxer.hikari.HikariDataSource
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
+import org.springframework.boot.autoconfigure.condition.ConditionalOnSingleCandidate
 import org.springframework.context.annotation.Bean
+import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.jdbc.datasource.SimpleDriverDataSource
+import org.springframework.jdbc.support.JdbcTransactionManager
+import org.springframework.transaction.annotation.EnableTransactionManagement
 import java.sql.Driver
 import javax.sql.DataSource
 
 @MyAutoConfiguration
 @ConditionalMyOnClass("org.springframework.jdbc.core.JdbcOperations")
 @EnableMyConfigurationProperties(DataSourceProperties::class)
+@EnableTransactionManagement
 class DataSourceConfig {
 
     @Bean
@@ -38,6 +43,20 @@ class DataSourceConfig {
         dataSource.password = properties.password
 
         return dataSource
+    }
+
+    @Bean
+    @ConditionalOnSingleCandidate(DataSource::class)
+    @ConditionalOnMissingBean
+    fun jdbcTemplate(dataSource: DataSource): JdbcTemplate {
+        return JdbcTemplate(dataSource)
+    }
+
+    @Bean
+    @ConditionalOnSingleCandidate(DataSource::class)
+    @ConditionalOnMissingBean
+    fun jdbcTransactionManager(dataSource: DataSource): JdbcTransactionManager {
+        return JdbcTransactionManager(dataSource)
     }
 
 }
