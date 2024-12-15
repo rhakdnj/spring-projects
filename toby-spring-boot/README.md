@@ -95,3 +95,18 @@ Value 애노테이션에 붙은 치환자를 교체해주는 것은 스프링 �
 스프링 컨테이너를 확장해서 치환자가 붙은 필드나 여러가지 구성 정보를 프로퍼티로 교체해주는
 그런 후처리 작업을 하는 어떤 기능을 스프링 컨테이너에 추가 해줘야 합니다.
 
+
+### 프로퍼티 빈의 후처리기 도입
+
+
+```text
+@Component와 같은 애노테이션은 꼭 스캔 등의 기능을 위해서만 붙이는 건 아닙니다.
+이 클래스가 스프링의 컴포넌트(빈)이라는 것을 나타내는 주석(annotation)으로 부여할 수도 있습니다.
+코드를 읽을 때 ServerProperties를 보고, 이 클래스도 빈으로 등록되고, 다른 빈에 DI될 수도 있구나라고 인식할 수 있습니다.
+
+스프링 @Import의 문서를 보면`Indicates one or more component classes to import — typically @Configuration classes.`
+라고 되어있습니다.
+
+여기서 component class가 꼭 @Component가 붙은 클래스라는 의미는 아니지만 스프링의 컴포넌트라고 생각한다면 적절한 애노테이션이 붙어있는게 좋다고 생각합니다.
+Import하는 대표적인 컴포넌트인 @Configuration도 @Component를 메타 애노테이션으로 가지고 있는 애노테이션이죠.
+```
