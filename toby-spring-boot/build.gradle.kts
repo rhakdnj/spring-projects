@@ -1,6 +1,6 @@
 dependencies {
     implementation(libs.springboot.web)
-    testImplementation(libs.springboot.starter.test)
+    testImplementation(libs.springboot.test)
 //    implementation("org.springframework.boot:spring-boot-starter-jetty")
 
     implementation("org.springframework:spring-jdbc")

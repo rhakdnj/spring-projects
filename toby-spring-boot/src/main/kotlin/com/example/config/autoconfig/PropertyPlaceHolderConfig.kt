@@ -1,10 +1,10 @@
 package com.example.config.autoconfig
 
-import com.example.config.MyAutoConfig
+import com.example.config.MyAutoConfiguration
 import org.springframework.context.annotation.Bean
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer
 
-@MyAutoConfig
+@MyAutoConfiguration
 class PropertyPlaceHolderConfig {
 
     @Bean

@@ -10,7 +10,7 @@ class MyAutoConfigImportSelector(
 
     override fun selectImports(importingClassMetadata: AnnotationMetadata): Array<String> {
         return ImportCandidates
-            .load(MyAutoConfig::class.java, this.classLoader)
+            .load(MyAutoConfiguration::class.java, this.classLoader)
             .toList()
             .toTypedArray()
     }

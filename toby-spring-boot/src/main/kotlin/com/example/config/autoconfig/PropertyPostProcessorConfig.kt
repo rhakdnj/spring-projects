@@ -1,6 +1,6 @@
 package com.example.config.autoconfig
 
-import com.example.config.MyAutoConfig
+import com.example.config.MyAutoConfiguration
 import com.example.config.MyConfigurationProperties
 import org.springframework.beans.factory.config.BeanPostProcessor
 import org.springframework.boot.context.properties.bind.Binder
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean
 import org.springframework.core.annotation.AnnotationUtils
 import org.springframework.core.env.Environment
 
-@MyAutoConfig
+@MyAutoConfiguration
 class PropertyPostProcessorConfig {
 
     /**
