@@ -4,12 +4,15 @@ logging:
   pattern:
     console: "%clr(${LOG_LEVEL_PATTERN:%5p}) %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
 
-my-server:
-  context-path: /api
+server:
   port: 9090
+  servlet:
+    context-path: /api
 
-data-source:
-  driverClassName: org.h2.Driver
-  url: "jdbc:h2:mem:"
-  username: sa
-  password: ''
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: "jdbc:h2:mem:"
+    username: sa
+    password: ''
+

@@ -1,10 +1,16 @@
 package com.example.tobyspringboot.tobyspringboot
 
+import com.example.tobyspringboot.HelloBootApplication
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.test.autoconfigure.jdbc.JdbcTest
+import org.springframework.test.context.ContextConfiguration
 import javax.sql.DataSource
 
-@HelloBootTest
+@JdbcTest
+@ContextConfiguration(
+    classes = [HelloBootApplication::class],
+) // 여러 개의 SpringBootApplication 이 있을 때 ContextConfiguration 지정
 class DataSourceTest(
     @Autowired private val dataSource: DataSource,
 ) {

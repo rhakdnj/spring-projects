@@ -1,11 +1,11 @@
 package com.example.tobyspringboot
 
-import com.example.config.MySpringBootApplication
 import jakarta.annotation.PostConstruct
+import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.jdbc.core.JdbcTemplate
 
-@MySpringBootApplication
+@SpringBootApplication
 class HelloBootApplication(
     private val jdbcTemplate: JdbcTemplate,
 ) {
