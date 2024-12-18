@@ -17,8 +17,8 @@ springboot-denpendency-management = { id = "io.spring.dependency-management", ve
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
 
 [libraries]
-springboot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
 springboot-web = { module = "org.springframework.boot:spring-boot-starter-web" }
+springboot-jdbc = { module = "org.springframework.boot:spring-boot-starter-jdbc" }
 springboot-data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa" }
 springboot-validation = { module = "org.springframework.boot:spring-boot-starter-validation" }
 springboot-test = { module = "org.springframework.boot:spring-boot-starter-test" }
@@ -28,7 +28,8 @@ springboot-actuator = { module = "org.springframework.boot:spring-boot-starter-a
 springboot-thymeleaf = { module = "org.springframework.boot:spring-boot-starter-thymeleaf" }
 springboot-mail = { module = "org.springframework.boot:spring-boot-starter-mail" }
 springboot-devtools = { module = "org.springframework.boot:spring-boot-devtools" }
-sprometheus = { module = "io.micrometer:micrometer-registry-prometheus" }
+prometheus = { module = "io.micrometer:micrometer-registry-prometheus" }
 uuid-generator = { module = "com.fasterxml.uuid:java-uuid-generator", version.ref = "uuid-generator" }
 kotling-logging-jvm = { module = "io.github.oshai:kotlin-logging-jvm", version.ref = "kotling-logging-jvm" }
 mysql = { module = "com.mysql:mysql-connector-j" }
+h2 = { module = "com.h2database:h2" }
